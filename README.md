@@ -1,1 +1,2 @@
-# ShiftFinalProject
+<h1> News App </h1>
+Хайбуллин Даниил
