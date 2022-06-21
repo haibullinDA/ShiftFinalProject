@@ -15,9 +15,19 @@ final class HomeTableViewCell: UITableViewCell {
     enum Constant {
         static let cornerRadius: CGFloat = 8
         static let stackViewSpacing: CGFloat = 0
+        static let stackViewHeightAnchor: CGFloat = 21
     }
 
     private let view = UIView()
+    
+    private let backgroundImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .lightGray
+        imageView.contentMode = .scaleToFill
+        imageView.layer.cornerRadius = Constant.cornerRadius
+        imageView.clipsToBounds = true
+        return imageView
+    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -25,7 +35,6 @@ final class HomeTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.textColor = .white
-        label.text = "5 things to know about the 'conundrum' of lupus"
         return label
     }()
     
@@ -35,7 +44,6 @@ final class HomeTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.textAlignment = .left
         label.textColor = .white
-        label.text = "Matt Villano"
         return label
     }()
     
@@ -45,7 +53,6 @@ final class HomeTableViewCell: UITableViewCell {
         label.numberOfLines = 0
         label.textAlignment = .right
         label.textColor = .white
-        label.text = "Sunday, 9 May 2021"
         return label
     }()
     
@@ -59,11 +66,17 @@ final class HomeTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func displayData(_ model: Model) {
+        self.titleLabel.text = model.title
+        self.authorLabel.text = model.author
+        self.dateLabel.text = model.date
+        self.backgroundImageView.image = UIImage(data: model.image ?? Data())
+    }
 }
 
 private extension HomeTableViewCell {
     func configure() {
-        
         self.setupBackGround()
         self.setupLayout()
     }
@@ -93,22 +106,18 @@ private extension HomeTableViewCell {
             stackView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -Constraint.standartSpacing),
             stackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: Constraint.standartSpacing),
             stackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -Constraint.standartSpacing),
-            stackView.heightAnchor.constraint(equalToConstant: self.heightLabel(for: self.authorLabel))
+            stackView.heightAnchor.constraint(equalToConstant: Constant.stackViewHeightAnchor )
         ])
     }
     
     func setupBackGround() {
-        let imageView = UIImageView(image: Assets.test.image)
-        imageView.contentMode = .scaleToFill
-        imageView.layer.cornerRadius = Constant.cornerRadius
-        imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(imageView)
+        self.backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(self.backgroundImageView)
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            imageView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            imageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+            self.backgroundImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            self.backgroundImageView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            self.backgroundImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            self.backgroundImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
         ])
     }
     
@@ -121,12 +130,5 @@ private extension HomeTableViewCell {
         stackView.distribution = .fillEqually
         stackView.spacing = Constant.stackViewSpacing
         return stackView
-    }
-    
-    func heightLabel(for label: UILabel) -> CGFloat {
-        let categoryAttribute = [NSAttributedString.Key.font : label.font as Any]
-        let categoryHeight = label.text?.size(withAttributes: categoryAttribute).height
-        guard let height = categoryHeight else { return 0 }
-        return height
     }
 }

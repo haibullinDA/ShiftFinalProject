@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol IHomeView: AnyObject {
+    func setupTableViewDataSource(dataSource: HomeDataSource)
+}
+
 final class HomeView: UIView {
     
     enum Constraint {
@@ -44,7 +48,6 @@ final class HomeView: UIView {
     }
     
     private func configureTableView() {
-        tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
@@ -52,15 +55,10 @@ final class HomeView: UIView {
     }
 }
 
-extension HomeView: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.id, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
-        cell.contentView.frame.inset(by: .init(top: 8, left: 0, bottom: 8, right: 0))
-        return cell
+extension HomeView: IHomeView {
+    func setupTableViewDataSource(dataSource: HomeDataSource) {
+        self.tableView.dataSource = dataSource
+        self.tableView.reloadData()
     }
 }
 

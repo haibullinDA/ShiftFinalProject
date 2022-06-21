@@ -11,7 +11,7 @@ import Foundation
 final class HorizontalFilterCollectionView: UICollectionView {
     
     private let categoryLayout = UICollectionViewFlowLayout()
-    private let nameCategoryArray = ["Art", "Sport", "Tech", "Finance", "Crypto", "Russia"]
+    private let nameCategoryArray = Category.allCases.map { $0.rawValue }
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: .zero, collectionViewLayout: self.categoryLayout)

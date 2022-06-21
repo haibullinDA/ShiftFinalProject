@@ -19,10 +19,10 @@ private extension CustomTabBarController {
     
     func setupVCs() {
         viewControllers = [
-            createNavigationController(for: HomeViewController(),
+            createNavigationController(for: HomeModuleAssembly.build(),
                                        title: "Home",
                                        image: Assets.homeGrey.image),
-            createNavigationController(for: DetailViewController(),
+            createNavigationController(for: UIViewController(),
                                        title: "Favorite",
                                        image: Assets.favoriteGrey.image),
         ]
