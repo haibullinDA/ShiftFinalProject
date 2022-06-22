@@ -8,13 +8,13 @@
 import Foundation
 
 protocol IHomeRouter {
-    
+    func routeToNew(with homeModel: HomeModel, from controller: HomeViewController?)
 }
 
-final class HomeRouter {
-    
-}
-
-extension HomeRouter: IHomeRouter {
-    
+final class HomeRouter: IHomeRouter {
+    func routeToNew(with homeModel: HomeModel, from controller: HomeViewController?) {
+        guard let vc = controller else { return }
+        let detailController = DetailModuleAssembly.build(homeModel: homeModel)
+        vc.navigationController?.pushViewController(detailController, animated: true)
+    }
 }

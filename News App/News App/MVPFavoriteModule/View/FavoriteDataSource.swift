@@ -1,14 +1,14 @@
 //
-//  HomeDataSource.swift
+//  FavoriteDataSource.swift
 //  News App
 //
-//  Created by Даниил Хайбуллин on 21.06.2022.
+//  Created by Даниил Хайбуллин on 22.06.2022.
 //
 
 import Foundation
 import UIKit
 
-final class HomeDataSource: NSObject {
+final class FavoriteDataSource: NSObject {
     
     public var loadHandler: (() -> ())?
     
@@ -23,7 +23,7 @@ final class HomeDataSource: NSObject {
     }
 }
 
-extension HomeDataSource: UITableViewDataSource {
+extension FavoriteDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return news.count
     }
@@ -31,9 +31,6 @@ extension HomeDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.id, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
         cell.displayData(news[indexPath.row])
-        if indexPath.row == self.news.count - 4 {
-            self.loadHandler?()
-        }
         return cell
     }
 }

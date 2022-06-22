@@ -9,6 +9,12 @@ import UIKit
 
 final class HeaderView: UIView {
     
+    struct Setting {
+        let title: String
+        let author: String
+        let date: String
+    }
+    
     enum Constraint {
         static let horizontakOffset: CGFloat = 24
         
@@ -17,24 +23,22 @@ final class HeaderView: UIView {
         static let titleLabelTopAnchor: CGFloat = 8
         static let titleLabelBottomAnchor: CGFloat = 8
     }
-    
     enum Constant {
         static let viewCornerRadius: CGFloat = 16
     }
     
     private let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "Sunday, 9 May 2022"
         label.numberOfLines = 1
         label.font = Nunito.semiBold12.font
         label.textColor = .black
         label.textAlignment = .left
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Crypto investors should be prepared to lose all their money, BOE governor says"
         label.numberOfLines = 0
         label.font = NewYorkSmall.bold16.font
         label.textColor = .black
@@ -44,7 +48,6 @@ final class HeaderView: UIView {
     
     private let authorLabel: UILabel = {
         let label = UILabel()
-        label.text = "Published by Ryan Browne"
         label.numberOfLines = 1
         label.font = Nunito.extraBold10.font
         label.textColor = .black
@@ -60,6 +63,12 @@ final class HeaderView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func displayData(with setting: Setting) {
+        self.titleLabel.text = setting.title
+        self.authorLabel.text = setting.author
+        self.dateLabel.text = setting.date
     }
     
     private func configure() {

@@ -11,15 +11,21 @@
 		E91AA6A8286212B500EFFCC7 /* NewsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6A7286212B500EFFCC7 /* NewsDTO.swift */; };
 		E91AA6AA2862140100EFFCC7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6A92862140100EFFCC7 /* NetworkService.swift */; };
 		E91AA6AF28621A2700EFFCC7 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6AE28621A2700EFFCC7 /* HomePresenter.swift */; };
-		E91AA6B128621A3000EFFCC7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B028621A3000EFFCC7 /* Model.swift */; };
+		E91AA6B128621A3000EFFCC7 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B028621A3000EFFCC7 /* HomeModel.swift */; };
 		E91AA6B328621A5300EFFCC7 /* HomeModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B228621A5300EFFCC7 /* HomeModuleAssembly.swift */; };
 		E91AA6B528621B4600EFFCC7 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B428621B4600EFFCC7 /* HomeRouter.swift */; };
 		E91AA6B828621E8300EFFCC7 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B728621E8300EFFCC7 /* DataBaseService.swift */; };
 		E91AA6BD2862210900EFFCC7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6BC2862210900EFFCC7 /* Category.swift */; };
 		E91AA6C0286224D600EFFCC7 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6BF286224D600EFFCC7 /* DateConverter.swift */; };
 		E91AA6C22862287600EFFCC7 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6C12862287600EFFCC7 /* HomeDataSource.swift */; };
+		E92F1AA82862E17E00C58DA7 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AA72862E17E00C58DA7 /* NotificationCenterExtension.swift */; };
+		E92F1AAB28630BF200C58DA7 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AAA28630BF200C58DA7 /* DetailPresenter.swift */; };
+		E92F1AAD28630C0100C58DA7 /* DetailModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AAC28630C0100C58DA7 /* DetailModuleAssembly.swift */; };
+		E92F1AAF2863106000C58DA7 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AAE2863106000C58DA7 /* DetailModel.swift */; };
+		E92F1AB4286327D800C58DA7 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AB3286327D800C58DA7 /* FavoriteViewController.swift */; };
+		E92F1AB7286328F000C58DA7 /* FavoriteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AB6286328F000C58DA7 /* FavoriteDataSource.swift */; };
 		E9E2DB712860C07000AC8273 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB702860C07000AC8273 /* HomeViewController.swift */; };
-		E9E2DB732860C09600AC8273 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB722860C09600AC8273 /* HomeView.swift */; };
+		E9E2DB732860C09600AC8273 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB722860C09600AC8273 /* CustomView.swift */; };
 		E9E2DB752860E60D00AC8273 /* CustomTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB742860E60D00AC8273 /* CustomTextFiled.swift */; };
 		E9E2DB772860ECA700AC8273 /* HorizontalFilterCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB762860ECA700AC8273 /* HorizontalFilterCollectionView.swift */; };
 		E9E2DB792860F30400AC8273 /* HorizontalFilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB782860F30400AC8273 /* HorizontalFilterCollectionViewCell.swift */; };
@@ -50,15 +56,21 @@
 		E91AA6A7286212B500EFFCC7 /* NewsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDTO.swift; sourceTree = "<group>"; };
 		E91AA6A92862140100EFFCC7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E91AA6AE28621A2700EFFCC7 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		E91AA6B028621A3000EFFCC7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E91AA6B028621A3000EFFCC7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E91AA6B228621A5300EFFCC7 /* HomeModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleAssembly.swift; sourceTree = "<group>"; };
 		E91AA6B428621B4600EFFCC7 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		E91AA6B728621E8300EFFCC7 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		E91AA6BC2862210900EFFCC7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E91AA6BF286224D600EFFCC7 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
 		E91AA6C12862287600EFFCC7 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
+		E92F1AA72862E17E00C58DA7 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
+		E92F1AAA28630BF200C58DA7 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		E92F1AAC28630C0100C58DA7 /* DetailModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModuleAssembly.swift; sourceTree = "<group>"; };
+		E92F1AAE2863106000C58DA7 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
+		E92F1AB3286327D800C58DA7 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		E92F1AB6286328F000C58DA7 /* FavoriteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataSource.swift; sourceTree = "<group>"; };
 		E9E2DB702860C07000AC8273 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E9E2DB722860C09600AC8273 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E9E2DB722860C09600AC8273 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		E9E2DB742860E60D00AC8273 /* CustomTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFiled.swift; sourceTree = "<group>"; };
 		E9E2DB762860ECA700AC8273 /* HorizontalFilterCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFilterCollectionView.swift; sourceTree = "<group>"; };
 		E9E2DB782860F30400AC8273 /* HorizontalFilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFilterCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -137,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E2DB702860C07000AC8273 /* HomeViewController.swift */,
-				E9E2DB722860C09600AC8273 /* HomeView.swift */,
+				E9E2DB722860C09600AC8273 /* CustomView.swift */,
 				E9E2DB762860ECA700AC8273 /* HorizontalFilterCollectionView.swift */,
 				E9E2DB742860E60D00AC8273 /* CustomTextFiled.swift */,
 				E91AA6C12862287600EFFCC7 /* HomeDataSource.swift */,
@@ -174,6 +186,42 @@
 			path = Converters;
 			sourceTree = "<group>";
 		};
+		E92F1AA62862E16000C58DA7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E92F1AA72862E17E00C58DA7 /* NotificationCenterExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E92F1AA928630BD900C58DA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9E2DB952861BBD600AC8273 /* DetailViewController.swift */,
+				E9E2DB972861BBF000AC8273 /* DetailView.swift */,
+				E91AA6A32861D34A00EFFCC7 /* CustomTextView.swift */,
+				E9E2DB992861BD0C00AC8273 /* HeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E92F1AB2286327A700C58DA7 /* MVPFavoriteModule */ = {
+			isa = PBXGroup;
+			children = (
+				E92F1AB5286328BF00C58DA7 /* View */,
+			);
+			path = MVPFavoriteModule;
+			sourceTree = "<group>";
+		};
+		E92F1AB5286328BF00C58DA7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E92F1AB3286327D800C58DA7 /* FavoriteViewController.swift */,
+				E92F1AB6286328F000C58DA7 /* FavoriteDataSource.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		E9E2DB7A2861785700AC8273 /* Design System */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,10 +250,10 @@
 		E9E2DB942861BBA800AC8273 /* MVPDetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				E9E2DB952861BBD600AC8273 /* DetailViewController.swift */,
-				E9E2DB972861BBF000AC8273 /* DetailView.swift */,
-				E91AA6A32861D34A00EFFCC7 /* CustomTextView.swift */,
-				E9E2DB992861BD0C00AC8273 /* HeaderView.swift */,
+				E92F1AAC28630C0100C58DA7 /* DetailModuleAssembly.swift */,
+				E92F1AAE2863106000C58DA7 /* DetailModel.swift */,
+				E92F1AAA28630BF200C58DA7 /* DetailPresenter.swift */,
+				E92F1AA928630BD900C58DA7 /* View */,
 			);
 			path = MVPDetailModule;
 			sourceTree = "<group>";
@@ -232,6 +280,7 @@
 				E9E5B9112860BC5A00631E23 /* BaseViewController.swift */,
 				E9E2DB922861AE0400AC8273 /* CustomTabBarController.swift */,
 				E9E5B9132860BCC000631E23 /* MVPHomeModule */,
+				E92F1AB2286327A700C58DA7 /* MVPFavoriteModule */,
 				E9E2DB942861BBA800AC8273 /* MVPDetailModule */,
 				E91AA6A528620BAF00EFFCC7 /* Services */,
 				E9E2DB7A2861785700AC8273 /* Design System */,
@@ -245,6 +294,7 @@
 		E9E5B9102860BC2500631E23 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E92F1AA62862E16000C58DA7 /* Extension */,
 				E91AA6BE286224C700EFFCC7 /* Converters */,
 				E91AA6B928621EDA00EFFCC7 /* Standart Files */,
 				E9E2DB9028618A0E00AC8273 /* Assets.swift */,
@@ -257,7 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				E91AA6B228621A5300EFFCC7 /* HomeModuleAssembly.swift */,
-				E91AA6B028621A3000EFFCC7 /* Model.swift */,
+				E91AA6B028621A3000EFFCC7 /* HomeModel.swift */,
 				E91AA6AE28621A2700EFFCC7 /* HomePresenter.swift */,
 				E91AA6B428621B4600EFFCC7 /* HomeRouter.swift */,
 				E91AA6AD28621A1700EFFCC7 /* View */,
@@ -344,8 +394,11 @@
 				E91AA6AF28621A2700EFFCC7 /* HomePresenter.swift in Sources */,
 				E9E2DB712860C07000AC8273 /* HomeViewController.swift in Sources */,
 				E91AA6C0286224D600EFFCC7 /* DateConverter.swift in Sources */,
-				E91AA6B128621A3000EFFCC7 /* Model.swift in Sources */,
+				E92F1AA82862E17E00C58DA7 /* NotificationCenterExtension.swift in Sources */,
+				E92F1AB7286328F000C58DA7 /* FavoriteDataSource.swift in Sources */,
+				E91AA6B128621A3000EFFCC7 /* HomeModel.swift in Sources */,
 				E91AA6B328621A5300EFFCC7 /* HomeModuleAssembly.swift in Sources */,
+				E92F1AAD28630C0100C58DA7 /* DetailModuleAssembly.swift in Sources */,
 				E9E2DB7C286178BF00AC8273 /* Colors.swift in Sources */,
 				E91AA6A42861D34A00EFFCC7 /* CustomTextView.swift in Sources */,
 				E9E5B9122860BC5A00631E23 /* BaseViewController.swift in Sources */,
@@ -355,15 +408,18 @@
 				E9E2DB8B28617ED900AC8273 /* AppFonts.swift in Sources */,
 				E9E2DB9A2861BD0C00AC8273 /* HeaderView.swift in Sources */,
 				E9E2DB8F286186B900AC8273 /* HomeTableViewCell.swift in Sources */,
+				E92F1AAF2863106000C58DA7 /* DetailModel.swift in Sources */,
 				E9E2DB792860F30400AC8273 /* HorizontalFilterCollectionViewCell.swift in Sources */,
 				E91AA6B528621B4600EFFCC7 /* HomeRouter.swift in Sources */,
 				E91AA6AA2862140100EFFCC7 /* NetworkService.swift in Sources */,
 				E9E2DB932861AE0400AC8273 /* CustomTabBarController.swift in Sources */,
 				E9E2DB982861BBF000AC8273 /* DetailView.swift in Sources */,
+				E92F1AB4286327D800C58DA7 /* FavoriteViewController.swift in Sources */,
 				E9E2DB9128618A0E00AC8273 /* Assets.swift in Sources */,
 				E91AA6B828621E8300EFFCC7 /* DataBaseService.swift in Sources */,
 				E9E2DB772860ECA700AC8273 /* HorizontalFilterCollectionView.swift in Sources */,
-				E9E2DB732860C09600AC8273 /* HomeView.swift in Sources */,
+				E92F1AAB28630BF200C58DA7 /* DetailPresenter.swift in Sources */,
+				E9E2DB732860C09600AC8273 /* CustomView.swift in Sources */,
 				E91AA6C22862287600EFFCC7 /* HomeDataSource.swift in Sources */,
 				E91AA6A8286212B500EFFCC7 /* NewsDTO.swift in Sources */,
 				E9E2DB962861BBD600AC8273 /* DetailViewController.swift in Sources */,

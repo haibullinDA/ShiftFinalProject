@@ -9,7 +9,7 @@ import UIKit
 
 final class HomeViewController: BaseViewController {
     
-    private let customView = HomeView()
+    private let customView = CustomView()
     private let presenter: IHomePresenter
     
     init(presenter: IHomePresenter) {

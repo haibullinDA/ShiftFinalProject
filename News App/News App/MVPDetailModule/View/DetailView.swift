@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol IDetailView: AnyObject {
+    func displayData(_ detailModel: DetailModel)
+    var backHandler: (() -> ())? { get set }
+    var favoriteHandler: (() -> ())? { get set }
+}
+
 final class DetailView: UIView {
 
     private enum Constraint {
@@ -15,8 +21,7 @@ final class DetailView: UIView {
         
         static let textViewTopAnchor: CGFloat = 20
         static let contentLabelTopAnchor: CGFloat = 88
-        static let headerViewTopAnchor: CGFloat = 50
-        static let headerViewBottomAnchor: CGFloat = 10
+        static let headerViewBottomAnchor: CGFloat = 80
         static let headerHorizontalAnchor: CGFloat = 32
         static let favoriteButtonTrailingAnchor: CGFloat = 15
         static let favoriteButtonBottomAnchor: CGFloat = 48
@@ -42,6 +47,7 @@ final class DetailView: UIView {
         let imageView = UIImageView()
         imageView.image = Assets.test.image
         imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = .lightGray
         return imageView
     }()
     private let headerView = HeaderView()
@@ -54,10 +60,15 @@ final class DetailView: UIView {
         return button
     }()
     
+    var favoriteHandler: (() -> ())?
+    var backHandler: (() -> ())?
+    
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .white
         self.configure()
+        self.backHandler?()
+        self.addTarget()
     }
     
     required init?(coder: NSCoder) {
@@ -66,6 +77,25 @@ final class DetailView: UIView {
     
     private func configure() {
         self.setupLayout()
+    }
+    
+    private func addTarget() {
+        self.backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+    }
+    
+    @objc
+    private func back() {
+        self.backHandler?()
+    }
+}
+
+extension DetailView: IDetailView {
+    func displayData(_ detailModel: DetailModel) {
+        self.imageView.image = UIImage(data: detailModel.image ?? Data())
+        self.headerView.displayData(with: .init(title: detailModel.title,
+                                                author: detailModel.author ?? "",
+                                                date: detailModel.date))
+        self.textView.displayData(detailModel.content ?? detailModel.description ?? "")
     }
 }
 
@@ -92,7 +122,7 @@ private extension DetailView {
         self.headerView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.headerView)
         NSLayoutConstraint.activate([
-            self.headerView.topAnchor.constraint(equalTo: self.textView.topAnchor, constant: -Constraint.headerViewTopAnchor),
+            self.headerView.bottomAnchor.constraint(equalTo: self.textView.topAnchor, constant: Constraint.headerViewBottomAnchor),
             self.headerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constraint.headerHorizontalAnchor),
             self.headerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constraint.headerHorizontalAnchor)
         ])

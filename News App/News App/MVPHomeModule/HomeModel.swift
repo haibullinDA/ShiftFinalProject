@@ -7,13 +7,14 @@
 
 import Foundation
 
-final class Model {
+final class HomeModel {
     let title: String
     let author: String?
     let date: String
     var image: Data?
     let description: String?
     let content: String?
+    let category: [String]
     let link: String
     
     init(with newDTO: New) {
@@ -23,10 +24,11 @@ final class Model {
         print(self.date)
         self.description = newDTO.resultDescription
         if let content = newDTO.content {
-            self.content = content
+            self.content = content + "\n\(newDTO.link)"
         } else {
             self.content = newDTO.resultDescription
         }
+        self.category = newDTO.category
         self.link = newDTO.link
     }
 }

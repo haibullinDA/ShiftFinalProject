@@ -7,11 +7,17 @@
 
 import UIKit
 
-protocol IHomeView: AnyObject {
-    func setupTableViewDataSource(dataSource: HomeDataSource)
+protocol IFavoriteView: AnyObject {
+
 }
 
-final class HomeView: UIView {
+protocol IHomeView: AnyObject {
+    func setupTableViewDataSource(dataSource: HomeDataSource)
+    var searchHandler: ((String?) -> ())? { get set }
+    var cellTapedHandler: ((Int) -> ())? { get set }
+}
+
+final class CustomView: UIView {
     
     enum Constraint {
         static let searchTopAnchor: CGFloat = 16
@@ -35,12 +41,17 @@ final class HomeView: UIView {
     private let searchTextField = CustomTextField()
     private let filterCollectionView = HorizontalFilterCollectionView()
     private let tableView = UITableView()
+    private var flag: Bool?
+    
+    var searchHandler: ((String?) -> ())?
+    var cellTapedHandler: ((Int) -> ())?
     
     init() {
         super.init(frame: .zero)
         self.backgroundColor = .white
         self.configureTableView()
         self.setupLayout()
+        self.searchTextField.adoptDelegate(self)
     }
     
     required init?(coder: NSCoder) {
@@ -50,26 +61,55 @@ final class HomeView: UIView {
     private func configureTableView() {
         tableView.delegate = self
         tableView.separatorStyle = .none
-        tableView.allowsSelection = false
+        tableView.allowsSelection = true
         tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.id)
+    }
+    
+    func setFavoriteView() -> CustomView {
+        self.flag = false
+        return self
     }
 }
 
-extension HomeView: IHomeView {
+extension CustomView: IHomeView {
     func setupTableViewDataSource(dataSource: HomeDataSource) {
         self.tableView.dataSource = dataSource
         self.tableView.reloadData()
     }
 }
 
-extension HomeView: UITableViewDelegate {
+extension CustomView: IFavoriteView {
+
+}
+
+extension CustomView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.cellTapedHandler?(indexPath.row)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.rowHeight
     }
 }
 
-private extension HomeView {
+extension CustomView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.searchHandler?(textField.text)
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+private extension CustomView {
     func setupLayout() {
+        if flag ?? true {
+            self.setupLayoutForHomeView()
+        } else {
+            self.setupLayoutForFavoriteView()
+        }
+    }
+    
+    func setupLayoutForHomeView() {
         self.searchTextField.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.searchTextField)
         NSLayoutConstraint.activate([
@@ -92,6 +132,17 @@ private extension HomeView {
         self.addSubview(self.tableView)
         NSLayoutConstraint.activate([
             self.tableView.topAnchor.constraint(equalTo: self.filterCollectionView.bottomAnchor, constant: Constraint.tableViewTopAnchor),
+            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constraint.tableViewHorizontalOffset),
+            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constraint.tableViewHorizontalOffset),
+            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
+    }
+    
+    func setupLayoutForFavoriteView() {
+        self.tableView.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(self.tableView)
+        NSLayoutConstraint.activate([
+            self.tableView.topAnchor.constraint(equalTo: self.topAnchor, constant: Constraint.tableViewTopAnchor),
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: Constraint.tableViewHorizontalOffset),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -Constraint.tableViewHorizontalOffset),
             self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)

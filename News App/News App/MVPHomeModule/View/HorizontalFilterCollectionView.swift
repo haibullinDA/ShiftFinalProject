@@ -25,17 +25,13 @@ final class HorizontalFilterCollectionView: UICollectionView {
     private func configure() {
         self.categoryLayout.minimumInteritemSpacing = 8
         self.categoryLayout.scrollDirection = .horizontal
-        
-        
         self.backgroundColor = .none
-        self.translatesAutoresizingMaskIntoConstraints = false
-        
         self.bounces = false
         self.showsHorizontalScrollIndicator = false
         self.delegate = self
         self.dataSource = self
-        
         self.register(HorizontalFilterCollectionViewCell.self, forCellWithReuseIdentifier: HorizontalFilterCollectionViewCell.id)
+        selectItem(at: [0,0], animated: true, scrollPosition: [])
     }
 }
 
@@ -55,6 +51,8 @@ extension HorizontalFilterCollectionView: UICollectionViewDataSource {
 extension HorizontalFilterCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        let userInfo = [String(describing: Category.self) : self.nameCategoryArray[indexPath.row]]
+        NotificationCenter.default.post(name: .setCategory, object: nil, userInfo: userInfo)
     }
 }
 

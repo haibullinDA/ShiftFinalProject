@@ -12,7 +12,7 @@ struct NewsDTO: Codable {
     let status: String
     let totalResults: Int
     let results: [New]
-    let nextPage: Int
+    let nextPage: Int?
     
     enum CodingKeys: String, CodingKey {
         case status, totalResults
@@ -31,7 +31,6 @@ struct New: Codable {
     let content: String?
     let pubDate: String
     let imageURL: String?
-    //let sourceID: String
     let country, category: [String]
     let language: String
 
@@ -40,7 +39,6 @@ struct New: Codable {
         case resultDescription = "description"
         case content, pubDate
         case imageURL = "image_url"
-        //case sourceID = "source_id"
         case country, category, language
     }
 }

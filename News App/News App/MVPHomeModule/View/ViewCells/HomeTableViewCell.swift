@@ -67,7 +67,7 @@ final class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func displayData(_ model: Model) {
+    func displayData(_ model: HomeModel) {
         self.titleLabel.text = model.title
         self.authorLabel.text = model.author
         self.dateLabel.text = model.date

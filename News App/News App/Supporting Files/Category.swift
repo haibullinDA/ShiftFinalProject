@@ -8,6 +8,7 @@
 import Foundation
 
 enum Category: String, CaseIterable {
+    case all = "All"
     case business = "Business"
     case entertainment = "Entertainment"
     case environment = "Environment"
