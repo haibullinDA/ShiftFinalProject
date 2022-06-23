@@ -9,10 +9,10 @@ import UIKit
 
 final class CustomTextField: UIView {
     
-    enum Constrain {
+    private enum Constrain {
         static let imageViewVerticalAnchor: CGFloat = 10
     }
-    enum Constant {
+    private enum Constant {
         static let textFieldBorderWidth: CGFloat = 0
         static let emptyViewWidth: CGFloat = 16
         static let viewCornerRadius: CGFloat = 16

@@ -8,7 +8,8 @@
 import UIKit
 
 protocol IFavoriteView: AnyObject {
-
+    func setupTableViewDataSource(dataSource: FavoriteDataSource)
+    var cellTapedHandler: ((Int) -> ())? { get set }
 }
 
 protocol IHomeView: AnyObject {
@@ -19,7 +20,7 @@ protocol IHomeView: AnyObject {
 
 final class CustomView: UIView {
     
-    enum Constraint {
+    private enum Constraint {
         static let searchTopAnchor: CGFloat = 16
         static let searchLeftRightAnchor: CGFloat = 15
         static let filterTopAnchor: CGFloat = 24
@@ -28,7 +29,7 @@ final class CustomView: UIView {
         static let tableViewTopAnchor: CGFloat = 8
         static let tableViewHorizontalOffset: CGFloat = 15
     }
-    enum Constant {
+    private enum Constant {
         static let spacingBetweenCell: CGFloat = 8
         static let searchHeightAnchor: CGFloat = 32
         static let cornerRadius: CGFloat = 16
@@ -41,12 +42,13 @@ final class CustomView: UIView {
     private let searchTextField = CustomTextField()
     private let filterCollectionView = HorizontalFilterCollectionView()
     private let tableView = UITableView()
-    private var flag: Bool?
+    private var flag: Bool
     
     var searchHandler: ((String?) -> ())?
     var cellTapedHandler: ((Int) -> ())?
     
     init() {
+        self.flag = true
         super.init(frame: .zero)
         self.backgroundColor = .white
         self.configureTableView()
@@ -62,11 +64,12 @@ final class CustomView: UIView {
         tableView.delegate = self
         tableView.separatorStyle = .none
         tableView.allowsSelection = true
-        tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.id)
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.id)
     }
     
-    func setFavoriteView() -> CustomView {
-        self.flag = false
+    func setFavoriteView(_ flag: Bool) -> CustomView {
+        self.flag = !flag
+        self.setupLayout()
         return self
     }
 }
@@ -79,7 +82,10 @@ extension CustomView: IHomeView {
 }
 
 extension CustomView: IFavoriteView {
-
+    func setupTableViewDataSource(dataSource: FavoriteDataSource) {
+        self.tableView.dataSource = dataSource
+        self.tableView.reloadData()
+    }
 }
 
 extension CustomView: UITableViewDelegate {
@@ -102,7 +108,7 @@ extension CustomView: UITextFieldDelegate {
 
 private extension CustomView {
     func setupLayout() {
-        if flag ?? true {
+        if flag {
             self.setupLayoutForHomeView()
         } else {
             self.setupLayoutForFavoriteView()

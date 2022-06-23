@@ -9,7 +9,7 @@ import UIKit
 
 final class HorizontalFilterCollectionViewCell: UICollectionViewCell {
     
-    enum Constant {
+    private enum Constant {
         static let borderWidth: CGFloat = 1
         static let cornerRadius: CGFloat = 16
     }

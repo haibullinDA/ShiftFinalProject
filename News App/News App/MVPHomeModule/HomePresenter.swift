@@ -15,14 +15,14 @@ final class HomePresenter {
     weak var view: IHomeView?
     weak var controller: HomeViewController?
     
-    private let router: IHomeRouter
+    private let router: Router
     private let networkService: INetworkService
     
     private var news = [HomeModel]()
     private let dataSource: HomeDataSource
     private var nextPage: Int?
     
-    init(router: IHomeRouter, networkService: INetworkService) {
+    init(router: Router, networkService: INetworkService) {
         self.router = router
         self.networkService = networkService
         self.dataSource = HomeDataSource(news: self.news)

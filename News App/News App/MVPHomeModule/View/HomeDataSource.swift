@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeDataSource: NSObject {
     
-    public var loadHandler: (() -> ())?
+    var loadHandler: (() -> ())?
     
     private var news: [HomeModel]
     
@@ -29,7 +29,7 @@ extension HomeDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.id, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.id, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         cell.displayData(news[indexPath.row])
         if indexPath.row == self.news.count - 4 {
             self.loadHandler?()

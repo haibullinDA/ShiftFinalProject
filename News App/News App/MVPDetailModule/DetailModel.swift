@@ -7,14 +7,13 @@
 
 import Foundation
 
-final class DetailModel {
+struct DetailModel {
     let title: String
     let author: String?
     let date: String
-    var image: Data?
+    let image: Data?
     let description: String?
     let content: String?
-    let link: String
     
     init(with homeModel: HomeModel) {
         self.title = homeModel.title
@@ -23,6 +22,5 @@ final class DetailModel {
         self.image = homeModel.image
         self.description = homeModel.description
         self.content = homeModel.content
-        self.link = homeModel.link
     }
 }

@@ -9,8 +9,7 @@ import Foundation
 import UIKit
 
 final class HomeModuleAssembly {
-    class func build() -> UIViewController {
-        let router = HomeRouter()
+    class func build(router: Router) -> UIViewController {
         let networkService = NetworkService()
         let presenter = HomePresenter(router: router, networkService: networkService)
         return HomeViewController(presenter: presenter)

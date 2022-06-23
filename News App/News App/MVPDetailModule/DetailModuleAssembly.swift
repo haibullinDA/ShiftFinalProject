@@ -8,9 +8,9 @@
 import UIKit
 
 final class DetailModuleAssembly {
-    class func build(homeModel: HomeModel) -> UIViewController {
+    class func build<Model>(model: Model) -> UIViewController {
         let dbService = DataBaseService()
-        let presenter = DetailPresenter(dbService: dbService, homeModel: homeModel)
+        let presenter = DetailPresenter(dbService: dbService, model: model)
         return DetailViewController(presenter: presenter)
     }
 }

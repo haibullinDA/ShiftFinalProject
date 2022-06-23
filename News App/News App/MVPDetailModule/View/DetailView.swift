@@ -10,7 +10,9 @@ import UIKit
 protocol IDetailView: AnyObject {
     func displayData(_ detailModel: DetailModel)
     var backHandler: (() -> ())? { get set }
-    var favoriteHandler: (() -> ())? { get set }
+    var favoriteHandler: ((Bool?) -> ())? { get set }
+    func enableFavoriteButton()
+    func disableFavoriteButton()
 }
 
 final class DetailView: UIView {
@@ -54,13 +56,11 @@ final class DetailView: UIView {
     private let textView = CustomTextView()
     private let favoriteButton: UIButton = {
         let button = UIButton()
-        button.setImage(Assets.favorite.image, for: .normal)
-        button.backgroundColor = Colors.pink.value
         button.layer.cornerRadius = Constant.favoriteButtonCornerRadius
         return button
     }()
-    
-    var favoriteHandler: (() -> ())?
+    private var favoriteButtonState: Bool?
+    var favoriteHandler: ((Bool?) -> ())?
     var backHandler: (() -> ())?
     
     init() {
@@ -79,13 +79,29 @@ final class DetailView: UIView {
         self.setupLayout()
     }
     
+    private func setAppearanceFavoriteButton() {
+        guard let state = self.favoriteButtonState else { return }
+        if state {
+            self.favoriteButton.setImage(Assets.favorite.image?.withTintColor(Colors.pink.value), for: .normal)
+            self.favoriteButton.backgroundColor = Colors.greyBackground.value
+        } else {
+            self.favoriteButton.setImage(Assets.favorite.image, for: .normal)
+            self.favoriteButton.backgroundColor = Colors.pink.value
+        }
+    }
+    
     private func addTarget() {
         self.backButton.addTarget(self, action: #selector(back), for: .touchUpInside)
+        self.favoriteButton.addTarget(self, action: #selector(favorite), for: .touchUpInside)
     }
     
     @objc
     private func back() {
         self.backHandler?()
+    }
+    @objc
+    private func favorite() {
+        self.favoriteHandler?(self.favoriteButtonState)
     }
 }
 
@@ -96,6 +112,15 @@ extension DetailView: IDetailView {
                                                 author: detailModel.author ?? "",
                                                 date: detailModel.date))
         self.textView.displayData(detailModel.content ?? detailModel.description ?? "")
+    }
+    
+    func enableFavoriteButton() {
+        self.favoriteButtonState = true
+        self.setAppearanceFavoriteButton()
+    }
+    func disableFavoriteButton() {
+        self.favoriteButtonState = false
+        self.setAppearanceFavoriteButton()
     }
 }
 

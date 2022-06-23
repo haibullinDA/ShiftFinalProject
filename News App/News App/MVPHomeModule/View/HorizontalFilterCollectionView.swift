@@ -9,6 +9,9 @@ import UIKit
 import Foundation
 
 final class HorizontalFilterCollectionView: UICollectionView {
+    private enum Constraint {
+        static let labelInItemPadding: CGFloat = 32
+    }
     
     private let categoryLayout = UICollectionViewFlowLayout()
     private let nameCategoryArray = Category.allCases.map { $0.rawValue }
@@ -61,6 +64,6 @@ extension HorizontalFilterCollectionView: UICollectionViewDelegateFlowLayout {
         let categoryFont = Nunito.semiBold12.font
         let categoryAttribute = [NSAttributedString.Key.font : categoryFont as Any]
         let categoryWidth = nameCategoryArray[indexPath.item].size(withAttributes: categoryAttribute).width
-        return CGSize(width: categoryWidth + 32, height: collectionView.frame.height)
+        return CGSize(width: categoryWidth + Constraint.labelInItemPadding, height: collectionView.frame.height)
     }
 }

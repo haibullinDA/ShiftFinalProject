@@ -23,9 +23,14 @@ final class DetailViewController: BaseViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.presenter.viewWillAppear()
+        super.viewWillAppear(animated)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func loadView() {

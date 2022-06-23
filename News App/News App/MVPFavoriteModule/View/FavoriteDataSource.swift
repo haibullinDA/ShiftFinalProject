@@ -12,13 +12,13 @@ final class FavoriteDataSource: NSObject {
     
     public var loadHandler: (() -> ())?
     
-    private var news: [HomeModel]
+    private var news: [FavoriteModel]
     
-    init(news: [HomeModel]) {
+    init(news: [FavoriteModel]) {
         self.news = news
     }
     
-    func setNews(_ news: [HomeModel]) {
+    func setNews(_ news: [FavoriteModel]) {
         self.news = news
     }
 }
@@ -29,7 +29,7 @@ extension FavoriteDataSource: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.id, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.id, for: indexPath) as? TableViewCell else { return UITableViewCell() }
         cell.displayData(news[indexPath.row])
         return cell
     }

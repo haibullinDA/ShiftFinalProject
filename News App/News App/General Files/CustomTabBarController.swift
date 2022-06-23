@@ -18,11 +18,12 @@ final class CustomTabBarController: UITabBarController {
 private extension CustomTabBarController {
     
     func setupVCs() {
+        let router = Router()
         viewControllers = [
-            createNavigationController(for: HomeModuleAssembly.build(),
+            createNavigationController(for: HomeModuleAssembly.build(router: router),
                                        title: "Home",
                                        image: Assets.homeGrey.image),
-            createNavigationController(for: UIViewController(),
+            createNavigationController(for: FavoriteModuleAssembly.build(router: router),
                                        title: "Favorite",
                                        image: Assets.favoriteGrey.image),
         ]

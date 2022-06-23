@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class HomeTableViewCell: UITableViewCell {
-    enum Constraint {
+final class TableViewCell: UITableViewCell {
+    private enum Constraint {
         static let standartSpacing: CGFloat = 8
     }
     
-    enum Constant {
+    private enum Constant {
         static let cornerRadius: CGFloat = 8
         static let stackViewSpacing: CGFloat = 0
         static let stackViewHeightAnchor: CGFloat = 21
@@ -56,7 +56,7 @@ final class HomeTableViewCell: UITableViewCell {
         return label
     }()
     
-    static let id = String(describing: HomeTableViewCell.self)
+    static let id = String(describing: TableViewCell.self)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -67,15 +67,23 @@ final class HomeTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func displayData(_ model: HomeModel) {
-        self.titleLabel.text = model.title
-        self.authorLabel.text = model.author
-        self.dateLabel.text = model.date
-        self.backgroundImageView.image = UIImage(data: model.image ?? Data())
+    func displayData<Model>(_ model: Model) {
+        if let model = model as? HomeModel {
+            self.titleLabel.text = model.title
+            self.authorLabel.text = model.author
+            self.dateLabel.text = model.date
+            self.backgroundImageView.image = UIImage(data: model.image ?? Data())
+        }
+        if let model = model as? FavoriteModel {
+            self.titleLabel.text = model.title
+            self.authorLabel.text = model.author
+            self.dateLabel.text = model.date
+            self.backgroundImageView.image = UIImage(data: model.imageData ?? Data())
+        }
     }
 }
 
-private extension HomeTableViewCell {
+private extension TableViewCell {
     func configure() {
         self.setupBackGround()
         self.setupLayout()
@@ -86,7 +94,7 @@ private extension HomeTableViewCell {
         self.contentView.addSubview(self.view)
         NSLayoutConstraint.activate([
             self.view.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            self.view.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
+            self.view.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: Constraint.standartSpacing),
             self.view.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             self.view.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor)
         ])

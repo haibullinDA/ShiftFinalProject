@@ -13,7 +13,6 @@
 		E91AA6AF28621A2700EFFCC7 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6AE28621A2700EFFCC7 /* HomePresenter.swift */; };
 		E91AA6B128621A3000EFFCC7 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B028621A3000EFFCC7 /* HomeModel.swift */; };
 		E91AA6B328621A5300EFFCC7 /* HomeModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B228621A5300EFFCC7 /* HomeModuleAssembly.swift */; };
-		E91AA6B528621B4600EFFCC7 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B428621B4600EFFCC7 /* HomeRouter.swift */; };
 		E91AA6B828621E8300EFFCC7 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6B728621E8300EFFCC7 /* DataBaseService.swift */; };
 		E91AA6BD2862210900EFFCC7 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6BC2862210900EFFCC7 /* Category.swift */; };
 		E91AA6C0286224D600EFFCC7 /* DateConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91AA6BF286224D600EFFCC7 /* DateConverter.swift */; };
@@ -24,6 +23,13 @@
 		E92F1AAF2863106000C58DA7 /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AAE2863106000C58DA7 /* DetailModel.swift */; };
 		E92F1AB4286327D800C58DA7 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AB3286327D800C58DA7 /* FavoriteViewController.swift */; };
 		E92F1AB7286328F000C58DA7 /* FavoriteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92F1AB6286328F000C58DA7 /* FavoriteDataSource.swift */; };
+		E95D299328635E1800B76622 /* FileManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D299228635E1800B76622 /* FileManagerService.swift */; };
+		E95D299A286380EA00B76622 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D2999286380EA00B76622 /* FavoriteModel.swift */; };
+		E95D299C286386A400B76622 /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D299B286386A400B76622 /* FavoritePresenter.swift */; };
+		E95D29A028638F6100B76622 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D299F28638F6100B76622 /* Router.swift */; };
+		E95D29A228638FE800B76622 /* FavoriteModuleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D29A128638FE800B76622 /* FavoriteModuleAssembly.swift */; };
+		E95D29A928644BC800B76622 /* NewMO+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D29A728644BC800B76622 /* NewMO+CoreDataClass.swift */; };
+		E95D29AA28644BC800B76622 /* NewMO+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D29A828644BC800B76622 /* NewMO+CoreDataProperties.swift */; };
 		E9E2DB712860C07000AC8273 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB702860C07000AC8273 /* HomeViewController.swift */; };
 		E9E2DB732860C09600AC8273 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB722860C09600AC8273 /* CustomView.swift */; };
 		E9E2DB752860E60D00AC8273 /* CustomTextFiled.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB742860E60D00AC8273 /* CustomTextFiled.swift */; };
@@ -37,7 +43,7 @@
 		E9E2DB8828617E5600AC8273 /* Nunito-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9E2DB8228617E5600AC8273 /* Nunito-ExtraBold.ttf */; };
 		E9E2DB8928617E5600AC8273 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9E2DB8328617E5600AC8273 /* Nunito-Regular.ttf */; };
 		E9E2DB8B28617ED900AC8273 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB8A28617ED900AC8273 /* AppFonts.swift */; };
-		E9E2DB8F286186B900AC8273 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB8E286186B900AC8273 /* HomeTableViewCell.swift */; };
+		E9E2DB8F286186B900AC8273 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB8E286186B900AC8273 /* TableViewCell.swift */; };
 		E9E2DB9128618A0E00AC8273 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB9028618A0E00AC8273 /* Assets.swift */; };
 		E9E2DB932861AE0400AC8273 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB922861AE0400AC8273 /* CustomTabBarController.swift */; };
 		E9E2DB962861BBD600AC8273 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E2DB952861BBD600AC8273 /* DetailViewController.swift */; };
@@ -58,7 +64,6 @@
 		E91AA6AE28621A2700EFFCC7 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		E91AA6B028621A3000EFFCC7 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		E91AA6B228621A5300EFFCC7 /* HomeModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModuleAssembly.swift; sourceTree = "<group>"; };
-		E91AA6B428621B4600EFFCC7 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		E91AA6B728621E8300EFFCC7 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
 		E91AA6BC2862210900EFFCC7 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		E91AA6BF286224D600EFFCC7 /* DateConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateConverter.swift; sourceTree = "<group>"; };
@@ -69,6 +74,13 @@
 		E92F1AAE2863106000C58DA7 /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		E92F1AB3286327D800C58DA7 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		E92F1AB6286328F000C58DA7 /* FavoriteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataSource.swift; sourceTree = "<group>"; };
+		E95D299228635E1800B76622 /* FileManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerService.swift; sourceTree = "<group>"; };
+		E95D2999286380EA00B76622 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		E95D299B286386A400B76622 /* FavoritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
+		E95D299F28638F6100B76622 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E95D29A128638FE800B76622 /* FavoriteModuleAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModuleAssembly.swift; sourceTree = "<group>"; };
+		E95D29A728644BC800B76622 /* NewMO+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewMO+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E95D29A828644BC800B76622 /* NewMO+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewMO+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E9E2DB702860C07000AC8273 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E9E2DB722860C09600AC8273 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		E9E2DB742860E60D00AC8273 /* CustomTextFiled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFiled.swift; sourceTree = "<group>"; };
@@ -84,7 +96,7 @@
 		E9E2DB8A28617ED900AC8273 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
 		E9E2DB8C286182F800AC8273 /* NewYorkSmall-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Semibold.otf"; sourceTree = "<group>"; };
 		E9E2DB8D286182F800AC8273 /* NewYorkSmall-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewYorkSmall-Bold.otf"; sourceTree = "<group>"; };
-		E9E2DB8E286186B900AC8273 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		E9E2DB8E286186B900AC8273 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		E9E2DB9028618A0E00AC8273 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		E9E2DB922861AE0400AC8273 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		E9E2DB952861BBD600AC8273 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +126,7 @@
 		E91AA6A528620BAF00EFFCC7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				E95D299128635E0100B76622 /* FileManagerService */,
 				E91AA6AB2862140500EFFCC7 /* NetworkService */,
 				E91AA6AC2862141700EFFCC7 /* DataBaseService */,
 			);
@@ -141,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E91AA6B728621E8300EFFCC7 /* DataBaseService.swift */,
+				E95D299428637FA500B76622 /* Core Data Models */,
 			);
 			path = DataBaseService;
 			sourceTree = "<group>";
@@ -149,7 +163,6 @@
 			isa = PBXGroup;
 			children = (
 				E9E2DB702860C07000AC8273 /* HomeViewController.swift */,
-				E9E2DB722860C09600AC8273 /* CustomView.swift */,
 				E9E2DB762860ECA700AC8273 /* HorizontalFilterCollectionView.swift */,
 				E9E2DB742860E60D00AC8273 /* CustomTextFiled.swift */,
 				E91AA6C12862287600EFFCC7 /* HomeDataSource.swift */,
@@ -162,7 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E2DB782860F30400AC8273 /* HorizontalFilterCollectionViewCell.swift */,
-				E9E2DB8E286186B900AC8273 /* HomeTableViewCell.swift */,
+				E9E2DB8E286186B900AC8273 /* TableViewCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -208,6 +221,9 @@
 		E92F1AB2286327A700C58DA7 /* MVPFavoriteModule */ = {
 			isa = PBXGroup;
 			children = (
+				E95D29A128638FE800B76622 /* FavoriteModuleAssembly.swift */,
+				E95D2999286380EA00B76622 /* FavoriteModel.swift */,
+				E95D299B286386A400B76622 /* FavoritePresenter.swift */,
 				E92F1AB5286328BF00C58DA7 /* View */,
 			);
 			path = MVPFavoriteModule;
@@ -220,6 +236,34 @@
 				E92F1AB6286328F000C58DA7 /* FavoriteDataSource.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E95D299128635E0100B76622 /* FileManagerService */ = {
+			isa = PBXGroup;
+			children = (
+				E95D299228635E1800B76622 /* FileManagerService.swift */,
+			);
+			path = FileManagerService;
+			sourceTree = "<group>";
+		};
+		E95D299428637FA500B76622 /* Core Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				E95D29A728644BC800B76622 /* NewMO+CoreDataClass.swift */,
+				E95D29A828644BC800B76622 /* NewMO+CoreDataProperties.swift */,
+			);
+			path = "Core Data Models";
+			sourceTree = "<group>";
+		};
+		E95D29AB28645F4D00B76622 /* General Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9E5B9112860BC5A00631E23 /* BaseViewController.swift */,
+				E9E2DB922861AE0400AC8273 /* CustomTabBarController.swift */,
+				E95D299F28638F6100B76622 /* Router.swift */,
+				E9E2DB722860C09600AC8273 /* CustomView.swift */,
+			);
+			path = "General Files";
 			sourceTree = "<group>";
 		};
 		E9E2DB7A2861785700AC8273 /* Design System */ = {
@@ -277,8 +321,7 @@
 		E9E5B8F82860BB1700631E23 /* News App */ = {
 			isa = PBXGroup;
 			children = (
-				E9E5B9112860BC5A00631E23 /* BaseViewController.swift */,
-				E9E2DB922861AE0400AC8273 /* CustomTabBarController.swift */,
+				E95D29AB28645F4D00B76622 /* General Files */,
 				E9E5B9132860BCC000631E23 /* MVPHomeModule */,
 				E92F1AB2286327A700C58DA7 /* MVPFavoriteModule */,
 				E9E2DB942861BBA800AC8273 /* MVPDetailModule */,
@@ -309,7 +352,6 @@
 				E91AA6B228621A5300EFFCC7 /* HomeModuleAssembly.swift */,
 				E91AA6B028621A3000EFFCC7 /* HomeModel.swift */,
 				E91AA6AE28621A2700EFFCC7 /* HomePresenter.swift */,
-				E91AA6B428621B4600EFFCC7 /* HomeRouter.swift */,
 				E91AA6AD28621A1700EFFCC7 /* View */,
 			);
 			path = MVPHomeModule;
@@ -391,11 +433,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E95D29A028638F6100B76622 /* Router.swift in Sources */,
 				E91AA6AF28621A2700EFFCC7 /* HomePresenter.swift in Sources */,
 				E9E2DB712860C07000AC8273 /* HomeViewController.swift in Sources */,
 				E91AA6C0286224D600EFFCC7 /* DateConverter.swift in Sources */,
 				E92F1AA82862E17E00C58DA7 /* NotificationCenterExtension.swift in Sources */,
 				E92F1AB7286328F000C58DA7 /* FavoriteDataSource.swift in Sources */,
+				E95D29A928644BC800B76622 /* NewMO+CoreDataClass.swift in Sources */,
 				E91AA6B128621A3000EFFCC7 /* HomeModel.swift in Sources */,
 				E91AA6B328621A5300EFFCC7 /* HomeModuleAssembly.swift in Sources */,
 				E92F1AAD28630C0100C58DA7 /* DetailModuleAssembly.swift in Sources */,
@@ -407,11 +451,12 @@
 				E91AA6BD2862210900EFFCC7 /* Category.swift in Sources */,
 				E9E2DB8B28617ED900AC8273 /* AppFonts.swift in Sources */,
 				E9E2DB9A2861BD0C00AC8273 /* HeaderView.swift in Sources */,
-				E9E2DB8F286186B900AC8273 /* HomeTableViewCell.swift in Sources */,
+				E95D299A286380EA00B76622 /* FavoriteModel.swift in Sources */,
+				E9E2DB8F286186B900AC8273 /* TableViewCell.swift in Sources */,
 				E92F1AAF2863106000C58DA7 /* DetailModel.swift in Sources */,
 				E9E2DB792860F30400AC8273 /* HorizontalFilterCollectionViewCell.swift in Sources */,
-				E91AA6B528621B4600EFFCC7 /* HomeRouter.swift in Sources */,
 				E91AA6AA2862140100EFFCC7 /* NetworkService.swift in Sources */,
+				E95D299C286386A400B76622 /* FavoritePresenter.swift in Sources */,
 				E9E2DB932861AE0400AC8273 /* CustomTabBarController.swift in Sources */,
 				E9E2DB982861BBF000AC8273 /* DetailView.swift in Sources */,
 				E92F1AB4286327D800C58DA7 /* FavoriteViewController.swift in Sources */,
@@ -421,8 +466,11 @@
 				E92F1AAB28630BF200C58DA7 /* DetailPresenter.swift in Sources */,
 				E9E2DB732860C09600AC8273 /* CustomView.swift in Sources */,
 				E91AA6C22862287600EFFCC7 /* HomeDataSource.swift in Sources */,
+				E95D299328635E1800B76622 /* FileManagerService.swift in Sources */,
+				E95D29AA28644BC800B76622 /* NewMO+CoreDataProperties.swift in Sources */,
 				E91AA6A8286212B500EFFCC7 /* NewsDTO.swift in Sources */,
 				E9E2DB962861BBD600AC8273 /* DetailViewController.swift in Sources */,
+				E95D29A228638FE800B76622 /* FavoriteModuleAssembly.swift in Sources */,
 				E9E5B9042860BB1700631E23 /* News_App.xcdatamodeld in Sources */,
 				E9E5B8FC2860BB1700631E23 /* SceneDelegate.swift in Sources */,
 			);

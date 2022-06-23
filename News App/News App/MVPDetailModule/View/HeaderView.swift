@@ -15,7 +15,7 @@ final class HeaderView: UIView {
         let date: String
     }
     
-    enum Constraint {
+    private enum Constraint {
         static let horizontakOffset: CGFloat = 24
         
         static let dateLabelTopAnchor: CGFloat = 16
@@ -23,7 +23,7 @@ final class HeaderView: UIView {
         static let titleLabelTopAnchor: CGFloat = 8
         static let titleLabelBottomAnchor: CGFloat = 8
     }
-    enum Constant {
+    private enum Constant {
         static let viewCornerRadius: CGFloat = 16
     }
     

@@ -17,6 +17,17 @@ final class HomeModel {
     let category: [String]
     let link: String
     
+    init(title: String, author: String?, date: String, image: Data?, description: String?, content: String?, category: [String], link: String) {
+        self.title = title
+        self.author = author
+        self.date = date
+        self.image = image
+        self.description = description
+        self.content = content
+        self.category = category
+        self.link = link
+    }
+    
     init(with newDTO: New) {
         self.title = newDTO.title
         self.author = newDTO.creator?.first
@@ -24,7 +35,7 @@ final class HomeModel {
         print(self.date)
         self.description = newDTO.resultDescription
         if let content = newDTO.content {
-            self.content = content + "\n\(newDTO.link)"
+            self.content = content
         } else {
             self.content = newDTO.resultDescription
         }
