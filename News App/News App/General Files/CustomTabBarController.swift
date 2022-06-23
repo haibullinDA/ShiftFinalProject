@@ -8,6 +8,13 @@
 import UIKit
 
 final class CustomTabBarController: UITabBarController {
+    private enum Constant {
+        static let positionX: CGFloat = 44
+        static let positionY: CGFloat = 14
+        static let shadowOpacity: Float = 0.5
+        static let shadowRadius: CGFloat = 10
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupVCs()
@@ -37,18 +44,16 @@ private extension CustomTabBarController {
     }
     
     func setTabBarAppearance() {
-        let positionX: CGFloat = 44
-        let positionY: CGFloat = 14
-        
-        let width = tabBar.bounds.width - positionX * 2
-        let height = tabBar.bounds.height + positionY * 2
-        let cgRect = CGRect(x: positionX, y: tabBar.bounds.minY - positionY, width: width, height: height)
+
+        let width = tabBar.bounds.width - Constant.positionX * 2
+        let height = tabBar.bounds.height + Constant.positionY * 2
+        let cgRect = CGRect(x: Constant.positionX, y: tabBar.bounds.minY - Constant.positionY, width: width, height: height)
         let roundLayer = CAShapeLayer()
         
         let bezierPath = UIBezierPath(roundedRect: cgRect,
                                       cornerRadius: height / 2)
         roundLayer.path = bezierPath.cgPath
-        roundLayer.fillColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        roundLayer.fillColor = Colors.white.value.cgColor
         self.setShadowTabBar(with: bezierPath.cgPath)
         tabBar.layer.insertSublayer(roundLayer, at: 0)
         tabBar.itemWidth = width / 2
@@ -59,9 +64,9 @@ private extension CustomTabBarController {
     
     private func setShadowTabBar(with path: CGPath) {
         tabBar.layer.shadowPath = path
-        tabBar.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        tabBar.layer.shadowOpacity = 0.5
+        tabBar.layer.shadowColor = Colors.blackHalf.value.cgColor
+        tabBar.layer.shadowOpacity = Constant.shadowOpacity
         tabBar.layer.shadowOffset = .zero
-        tabBar.layer.shadowRadius = 10
+        tabBar.layer.shadowRadius = Constant.shadowRadius
     }
 }

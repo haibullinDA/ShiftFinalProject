@@ -47,7 +47,6 @@ final class DetailView: UIView {
     }()
     private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = Assets.test.image
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .lightGray
         return imageView
